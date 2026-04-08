@@ -25,3 +25,17 @@ ORDER BY total_sold DESC;
 SELECT MONTH(order_date) AS month, SUM(total_amount) AS sales
 FROM Orders
 GROUP BY MONTH(order_date);
+
+Find repeat customers
+SELECT customer_id, COUNT(order_id) AS order_count
+FROM Orders
+GROUP BY customer_id
+HAVING COUNT(order_id) > 1;
+
+-- Average order value
+SELECT AVG(total_amount) AS avg_order_value FROM Orders;
+
+-- Highest order
+SELECT * FROM Orders
+ORDER BY total_amount DESC
+LIMIT 1;
