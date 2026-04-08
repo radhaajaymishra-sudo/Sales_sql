@@ -7,7 +7,8 @@ SELECT SUM(total_amount) AS total_sales FROM Orders;
 SELECT c.city, SUM(o.total_amount) AS total_sales
 FROM Orders o
 JOIN Customers c ON o.customer_id = c.customer_id
-GROUP BY c.city;
+GROUP BY c.city
+ORDER BY total_sales DESC;
 
 -- Top Customers
 --Q3: Who are the top customers by spending?
@@ -29,7 +30,7 @@ SELECT MONTH(order_date) AS month, SUM(total_amount) AS sales
 FROM Orders
 GROUP BY MONTH(order_date);
 
-Find repeat customers
+--Find repeat customers
 SELECT customer_id, COUNT(order_id) AS order_count
 FROM Orders
 GROUP BY customer_id
