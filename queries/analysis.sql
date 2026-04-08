@@ -1,13 +1,16 @@
 -- Total Sales
+--Q1: What is the total revenue generated?
 SELECT SUM(total_amount) AS total_sales FROM Orders;
 
 -- Sales by City
+--Q2: Which city generates the highest sales?
 SELECT c.city, SUM(o.total_amount) AS total_sales
 FROM Orders o
 JOIN Customers c ON o.customer_id = c.customer_id
 GROUP BY c.city;
 
 -- Top Customers
+--Q3: Who are the top customers by spending?
 SELECT c.customer_name, SUM(o.total_amount) AS total_spent
 FROM Orders o
 JOIN Customers c ON o.customer_id = c.customer_id
@@ -39,3 +42,5 @@ SELECT AVG(total_amount) AS avg_order_value FROM Orders;
 SELECT * FROM Orders
 ORDER BY total_amount DESC
 LIMIT 1;
+
+
