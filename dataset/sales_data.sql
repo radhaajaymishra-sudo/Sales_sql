@@ -30,3 +30,10 @@ INSERT INTO Order_Details VALUES
 (102, 2, 1),
 (103, 3, 11);
 
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE NOT NULL,
+    total_amount DECIMAL(10,2) CHECK (total_amount > 0),
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);
