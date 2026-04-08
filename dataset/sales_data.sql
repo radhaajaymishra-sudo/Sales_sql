@@ -1,3 +1,9 @@
+-- Sales Data Analysis Project
+-- Created by: Radha Mishra
+-- Description: This dataset contains customer, product, and order details for analysis
+
+
+
 INSERT INTO Customers VALUES
 (1, 'Rahul Sharma', 'Delhi'),
 (2, 'Anita Verma', 'Mumbai'),
